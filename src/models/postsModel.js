@@ -7,11 +7,6 @@ function selectAll(){
     )
 }
 
-//filtro de posts por autor
-function selectByAutor(idAutor) {
-    return pool.query('select * from posts where autor_id = ?;', [idAutor]);
-}
-
 // insertar post
 function insertPost({ titulo, descripcion, fecha_creacion, categoria, autor_id}){
     return pool.query(
@@ -20,6 +15,12 @@ function insertPost({ titulo, descripcion, fecha_creacion, categoria, autor_id})
     )
 }
 
+///filtro de posts por autor
+// function selectByAutor(idAutor) {
+//     return pool.query('select * from posts where autor_id = ?;', [idAutor]);
+// }
+
 module.exports = {
-    selectAll, selectByAutor, insertPost
+    //selectAll, selectByAutor, insertPost
+    selectAll, insertPost
 }

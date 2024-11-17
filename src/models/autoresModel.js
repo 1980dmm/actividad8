@@ -15,6 +15,11 @@ function insertAutor({ nombre, mail, imagen }){
     )
 }
 
+//filtro de posts por autor
+function selectPostsByAutorId(idAutor) {
+    return pool.query('select * from posts where autor_id = ?;', [idAutor]);
+}
+
 module.exports = {
-    selectAll, insertAutor
+    selectAll, insertAutor, selectPostsByAutorId
 }
